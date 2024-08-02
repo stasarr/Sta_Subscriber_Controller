@@ -25,7 +25,7 @@ if (!fs.existsSync('./cache')) {
 require("./load.js")(client);
 
 client.on('ready', () => {
-    console.log(`${colors.bgCyan('[BOT]').black} --> ${colors.green('Bot Başarıyla Aktif Edildi!')} Botun Adı: ${colors.green(client.user.username)} | Botun ID'si: ${colors.green(client.user.id)}`.green);
+    console.log(`Bot Başarıyla Aktif Edildi! Botun Adı: ${client.user.username} | Botun ID'si: ${client.user.id}`);
     client.user.setPresence({
         activities: [{
             name: 'Abonelikler izleniyor | Operated by Sta',
@@ -49,4 +49,4 @@ app.listen(port, () => {
   console.log(`Sunucu ${port} numaralı bağlantı noktasında yürütülüyor.`);
 });
 
-client.login(process.env.token).catch(() => console.log(`${colors.bgRed('[HATA]').black} --> ${colors.red('Botun Tokeni Geçersiz! Lütfen Tokeni Kontrol Ediniz!')}`.red));
+client.login(process.env.token).catch(() => console.log(`Botun Tokeni Geçersiz! Lütfen Tokeni Kontrol Ediniz!`));
