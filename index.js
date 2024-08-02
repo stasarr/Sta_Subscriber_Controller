@@ -8,7 +8,6 @@ const {
 const client = new Client({
     intents: 32767
 });
-const colors = require('colors');
 global.EmbedBuilder = require('discord.js').EmbedBuilder;
 global.fs = require('fs');
 global.moment = require('moment');
