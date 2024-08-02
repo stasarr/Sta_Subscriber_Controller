@@ -28,11 +28,11 @@ client.on('ready', () => {
     console.log(`${colors.bgCyan('[BOT]').black} --> ${colors.green('Bot Başarıyla Aktif Edildi!')} Botun Adı: ${colors.green(client.user.username)} | Botun ID'si: ${colors.green(client.user.id)}`.green);
     client.user.setPresence({
         activities: [{
-            name: 'Fast Auto Subscriber Role | FASR - FastUptime.Com',
+            name: 'Abonelikler izleniyor | Operated by Sta',
             type: 0
         }],
         status: 'online'
     });
 });
 
-client.login(config.token).catch(() => console.log(`${colors.bgRed('[HATA]').black} --> ${colors.red('Botun Tokeni Geçersiz! Lütfen Tokeni Kontrol Ediniz!')}`.red));
+client.login(process.env.token).catch(() => console.log(`${colors.bgRed('[HATA]').black} --> ${colors.red('Botun Tokeni Geçersiz! Lütfen Tokeni Kontrol Ediniz!')}`.red));
