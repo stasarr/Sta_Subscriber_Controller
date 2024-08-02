@@ -64,7 +64,7 @@ module.exports = {
                 }
             }) => {
                 fs.unlinkSync(`./cache/${id}.png`);
-                if (!text.toLowerCase().includes(config.channelName.toLowerCase())) return interaction.editReply({
+                if (!text.toLowerCase().includes(process.env.channelName.toLowerCase())) return interaction.editReply({
                     embeds: [{
                         description: "Resimdeki kanal doğru kanal değil!",
                         footer: {
@@ -104,7 +104,7 @@ module.exports = {
                         color: 0xEB2F49
                     }]
                 });
-                let role = interaction.guild.roles.cache.get(config.subscriberRole);
+                let role = interaction.guild.roles.cache.get(process.env.subscriberRole);
                 if (!role) return interaction.editReply({
                     embeds: [{
                         description: "Abone rolü bulunamadı!",
