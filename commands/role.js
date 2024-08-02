@@ -7,22 +7,22 @@ module.exports = {
     options: [
         {
             name: "image",
-            description: "Abone Olduğunuz'a Dair Bir Resim Yükleyin! (PNG Formatında Olmalıdır!)",
+            description: "Abone olduğunuza dair bir resim yükleyin! (PNG formatında olmalıdır!)",
             type: 11,
             contentType: "image/png",
             required: true,
         }
     ],
     admin: false,
-    description: "Abone Rolü Verir. Abone olduğunuz halde rol vermiyorsa %90 uzaklaştırıp SS alın ve tekrar deneyin.",
+    description: "Abone rolü verir. Abone olduğunuz halde rol vermiyorsa %90 uzaklaştırıp SS alın ve tekrar deneyin.",
     run: async (client, interaction) => {
         await interaction.deferReply();
         await interaction.editReply({
             embeds: [{
                 description: "Resim İşleniyor...",
                 footer: {
-                    text: "Github.com/fastuptime",
-                    iconURL: "https://i.hizliresim.com/tc4zeoj.png"
+                    text: "Sta Abone Rolü Kontrolcüsü",
+                    iconURL: "https://i.imgur.com/rnceeW4.png"
                 },
                 color: 0xF2C758
             }]
@@ -30,10 +30,10 @@ module.exports = {
         let image = interaction.options.getAttachment("image");
         if (image.contentType !== "image/png") return interaction.editReply({
             embeds: [{
-                description: "Lütfen PNG Formatında Bir Resim Yükleyin!",
+                description: "Lütfen PNG formatında bir resim yükleyin!",
                 footer: {
-                    text: "Github.com/fastuptime",
-                    iconURL: "https://i.hizliresim.com/tc4zeoj.png"
+                    text: "Sta Abone Rolü Kontrolcüsü",
+                    iconURL: "https://i.imgur.com/rnceeW4.png"
                 },
                 color: 0xEB2F49
             }],
@@ -41,10 +41,10 @@ module.exports = {
         });
         if (image.size > 1024 * 1024 * 5) return interaction.editReply({
             embeds: [{
-                description: "Lütfen 5MB'dan Küçük Bir Resim Yükleyin!",
+                description: "Lütfen 5MB'dan küçük bir resim yükleyin!",
                 footer: {
-                    text: "Github.com/fastuptime",
-                    iconURL: "https://i.hizliresim.com/tc4zeoj.png"
+                    text: "Sta Abone Rolü Kontrolcüsü",
+                    iconURL: "https://i.imgur.com/rnceeW4.png"
                 },
                 color: 0xEB2F49
             }],
@@ -66,40 +66,40 @@ module.exports = {
                 fs.unlinkSync(`./cache/${id}.png`);
                 if (!text.toLowerCase().includes(config.channelName.toLowerCase())) return interaction.editReply({
                     embeds: [{
-                        description: "Lütfen Resimdeki Kanal Bu Sunucuya Ait Değil!",
+                        description: "Resimdeki kanal doğru kanal değil!",
                         footer: {
-                            text: "Github.com/fastuptime",
-                            iconURL: "https://i.hizliresim.com/tc4zeoj.png"
+                            text: "Sta Abone Rolü Kontrolcüsü",
+                            iconURL: "https://i.imgur.com/rnceeW4.png"
                         },
                         color: 0xEB2F49
                     }]
                 });
                 if (!text.toLowerCase().includes(userName.toLowerCase())) return interaction.editReply({
                     embeds: [{
-                        description: "Kullanıcı Adınız Resimde Yer Almıyor!",
+                        description: "Kullanıcı adınız resimde yer almıyor!",
                         footer: {
-                            text: "Github.com/fastuptime",
-                            iconURL: "https://i.hizliresim.com/tc4zeoj.png"
+                            text: "Sta Abone Rolü Kontrolcüsü",
+                            iconURL: "https://i.imgur.com/rnceeW4.png"
                         },
                         color: 0xEB2F49
                     }]
                 });
                 if (!text.toLowerCase().includes("abone olundu")) return interaction.editReply({
                     embeds: [{
-                        description: "Abone Olmamışsınız!\nMobil den Abone Olduysanız Bu Şekilde Doğrulayamayız!",
+                        description: "Abone değilsin ya da siteyi Türkçe olarak kullanmıyorsun!\n-# Görüntü mobil uygulamaya ait ise henüz mobil görselleri doğrulayamıyoruz.\n-# Görüntüyü Türkçe ve masaüstü resmi olarak yüklemeyi deneyin.\n-# Yüklediğiniz görsel doğrulanmıyorsa lütfen bir yetkilinin aboneliğinizi doğrulamasını bekleyin.",
                         footer: {
-                            text: "Github.com/fastuptime",
-                            iconURL: "https://i.hizliresim.com/tc4zeoj.png"
+                            text: "Sta Abone Rolü Kontrolcüsü",
+                            iconURL: "https://i.imgur.com/rnceeW4.png"
                         },
                         color: 0xEB2F49
                     }]
                 });
                 if (!text.toLowerCase().includes("video")) return interaction.editReply({
                     embeds: [{
-                        description: "Burada Bir Terslik Var! Lütfen Tekrar Deneyin!",
+                        description: "Bir şeyler ters gitti! Lütfen tekrar deneyin ya da doğrulama için bir yetkiliyi bekleyin.",
                         footer: {
-                            text: "Github.com/fastuptime",
-                            iconURL: "https://i.hizliresim.com/tc4zeoj.png"
+                            text: "Sta Abone Rolü Kontrolcüsü",
+                            iconURL: "https://i.imgur.com/rnceeW4.png"
                         },
                         color: 0xEB2F49
                     }]
@@ -107,10 +107,10 @@ module.exports = {
                 let role = interaction.guild.roles.cache.get(config.subscriberRole);
                 if (!role) return interaction.editReply({
                     embeds: [{
-                        description: "Abone Rolü Bulunamadı!",
+                        description: "Abone rolü bulunamadı!",
                         footer: {
-                            text: "Github.com/fastuptime",
-                            iconURL: "https://i.hizliresim.com/tc4zeoj.png"
+                            text: "Sta Abone Rolü Kontrolcüsü",
+                            iconURL: "https://i.imgur.com/rnceeW4.png"
                         },
                         color: 0xEB2F49
                     }]
@@ -118,10 +118,10 @@ module.exports = {
                 interaction.member.roles.add(role).then(() => {
                     interaction.editReply({
                         embeds: [{
-                            description: "Abone Rolü Başarıyla Verildi!",
+                            description: "Abone rolü başarıyla verildi!",
                             footer: {
-                                text: "Github.com/fastuptime",
-                                iconURL: "https://i.hizliresim.com/tc4zeoj.png"
+                                text: "Sta Abone Rolü Kontrolcüsü",
+                                iconURL: "https://i.imgur.com/rnceeW4.png"
                             },
                             color: 0x57F287
                         }]
@@ -130,10 +130,10 @@ module.exports = {
                     console.log(err);
                     interaction.editReply({
                         embeds: [{
-                            description: "Rol Verilirken Bir Hata Oluştu!",
+                            description: "Rol verilirken bir şeyler ters gitti!",
                             footer: {
-                                text: "Github.com/fastuptime",
-                                iconURL: "https://i.hizliresim.com/tc4zeoj.png"
+                                text: "Sta Abone Rolü Kontrolcüsü",
+                                iconURL: "https://i.imgur.com/rnceeW4.png"
                             },
                             color: 0xEB2F49
                         }]
@@ -143,10 +143,10 @@ module.exports = {
                 console.log(err);
                 interaction.followUp({
                     embeds: [{
-                        description: "Bir Hata Oluştu!",
+                        description: "Bir şeyler ters gitti!",
                         footer: {
-                            text: "Github.com/fastuptime",
-                            iconURL: "https://i.hizliresim.com/tc4zeoj.png"
+                            text: "Sta Abone Rolü Kontrolcüsü",
+                            iconURL: "https://i.imgur.com/rnceeW4.png"
                         },
                         color: 0xEB2F49
                     }]
