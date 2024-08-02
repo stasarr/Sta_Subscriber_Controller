@@ -27,7 +27,7 @@ module.exports = function (client) {
       }
       try {
         if (command.admin) {
-          if (!config.ownerID.includes(interaction.user.id)) return interaction.reply({ content: "Bu komutu kullanmak için gerekli yetkiye sahip değilsin.", ephemeral: true }).catch(console.error);
+          if (!process.env.ownerID.includes(interaction.user.id)) return interaction.reply({ content: "Bu komutu kullanmak için gerekli yetkiye sahip değilsin.", ephemeral: true }).catch(console.error);
             command.run(client, interaction);
         } else {
             command.run(client, interaction);
