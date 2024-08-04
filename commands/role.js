@@ -74,19 +74,19 @@ module.exports = {
                         color: 0xEB2F49
                     }]
                 });
-                if (!text.toLowerCase().includes(userName.toLowerCase())) return interaction.editReply({
+                // if (!text.toLowerCase().includes(userName.toLowerCase())) return interaction.editReply({
+                //     embeds: [{
+                //         description: "Kullanıcı adınız resimde yer almıyor!",
+                //         footer: {
+                //             text: "Sta Abone Rolü Kontrolcüsü",
+                //             iconURL: "https://i.imgur.com/rnceeW4.png"
+                //         },
+                //         color: 0xEB2F49
+                //     }]
+                // });
+                if (!text.toLowerCase().includes("abone olundu") || !text.toLowerCase().includes("subscribed") || !text.toLowerCase().includes("Abunə oldu") || !text.toLowerCase().includes("Gezeichnet") || !text.toLowerCase().includes("Abonné")) return interaction.editReply({
                     embeds: [{
-                        description: "Kullanıcı adınız resimde yer almıyor!",
-                        footer: {
-                            text: "Sta Abone Rolü Kontrolcüsü",
-                            iconURL: "https://i.imgur.com/rnceeW4.png"
-                        },
-                        color: 0xEB2F49
-                    }]
-                });
-                if (!text.toLowerCase().includes("abone olundu")) return interaction.editReply({
-                    embeds: [{
-                        description: "Abone değilsin ya da siteyi Türkçe olarak kullanmıyorsun!\n-# Görüntü mobil uygulamaya ait ise henüz mobil görselleri doğrulayamıyoruz.\n-# Görüntüyü Türkçe ve masaüstü resmi olarak yüklemeyi deneyin.\n-# Yüklediğiniz görsel doğrulanmıyorsa lütfen bir yetkilinin aboneliğinizi doğrulamasını bekleyin.",
+                        description: "Abone değilsin!\n-# Görüntü mobil uygulamaya ait ise henüz mobil görselleri doğrulayamıyoruz.\n-# Görüntüyü Türkçe ve masaüstü resmi olarak yüklemeyi deneyin.\n-# Yüklediğiniz görsel doğrulanmıyorsa lütfen bir yetkilinin aboneliğinizi doğrulamasını bekleyin.",
                         footer: {
                             text: "Sta Abone Rolü Kontrolcüsü",
                             iconURL: "https://i.imgur.com/rnceeW4.png"
