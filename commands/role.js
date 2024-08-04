@@ -28,9 +28,9 @@ module.exports = {
             }]
         });
         let image = interaction.options.getAttachment("image");
-        if (image.contentType !== "image/png") return interaction.editReply({
+        if (image.contentType !== "image/png" && image.contentType !== "image/jpeg") return interaction.editReply({
             embeds: [{
-                description: "Lütfen PNG formatında bir resim yükleyin!",
+                description: "Lütfen PNG veya JPG formatında bir resim yükleyin!",
                 footer: {
                     text: "Sta Abone Rolü Kontrolcüsü",
                     iconURL: "https://i.imgur.com/rnceeW4.png"
