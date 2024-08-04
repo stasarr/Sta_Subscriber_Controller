@@ -86,6 +86,10 @@ module.exports = {
                 // });
                 if (
                     !text.toLowerCase().includes("abone olundu") && 
+                    !text.toLowerCase().includes("Abone olundu") && 
+                    !text.toLowerCase().includes("abone olun...") && 
+                    !text.toLowerCase().includes("abone olun") && 
+                    !text.toLowerCase().includes("Abonniert") && 
                     !text.toLowerCase().includes("subscribed") && 
                     !text.toLowerCase().includes("abunə oldu") && 
                     !text.toLowerCase().includes("gezeichnet") && 
