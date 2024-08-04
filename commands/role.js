@@ -84,16 +84,24 @@ module.exports = {
                 //         color: 0xEB2F49
                 //     }]
                 // });
-                if (!text.toLowerCase().includes("abone olundu") || !text.toLowerCase().includes("subscribed") || !text.toLowerCase().includes("Abunə oldu") || !text.toLowerCase().includes("Gezeichnet") || !text.toLowerCase().includes("Abonné")) return interaction.editReply({
-                    embeds: [{
-                        description: "Abone değilsin!\n-# Görüntü mobil uygulamaya ait ise henüz mobil görselleri doğrulayamıyoruz.\n-# Görüntüyü Türkçe ve masaüstü resmi olarak yüklemeyi deneyin.\n-# Yüklediğiniz görsel doğrulanmıyorsa lütfen bir yetkilinin aboneliğinizi doğrulamasını bekleyin.",
-                        footer: {
-                            text: "Sta Abone Rolü Kontrolcüsü",
-                            iconURL: "https://i.imgur.com/rnceeW4.png"
-                        },
-                        color: 0xEB2F49
-                    }]
-                });
+                if (
+                    !text.toLowerCase().includes("abone olundu") && 
+                    !text.toLowerCase().includes("subscribed") && 
+                    !text.toLowerCase().includes("abunə oldu") && 
+                    !text.toLowerCase().includes("gezeichnet") && 
+                    !text.toLowerCase().includes("abonné")
+                ) {
+                    return interaction.editReply({
+                        embeds: [{
+                            description: "Abone değilsin!\n-# Görüntü mobil uygulamaya ait ise henüz mobil görselleri doğrulayamıyoruz.\n-# Görüntüyü Türkçe ve masaüstü resmi olarak yüklemeyi deneyin.\n-# Yüklediğiniz görsel doğrulanmıyorsa lütfen bir yetkilinin aboneliğinizi doğrulamasını bekleyin.",
+                            footer: {
+                                text: "Sta Abone Rolü Kontrolcüsü",
+                                iconURL: "https://i.imgur.com/rnceeW4.png"
+                            },
+                            color: 0xEB2F49
+                        }]
+                    });
+                }
                 if (!text.toLowerCase().includes("video")) return interaction.editReply({
                     embeds: [{
                         description: "Bir şeyler ters gitti! Lütfen tekrar deneyin ya da doğrulama için bir yetkiliyi bekleyin.",
