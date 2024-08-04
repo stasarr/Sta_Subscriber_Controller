@@ -28,7 +28,7 @@ module.exports = {
             }]
         });
         let image = interaction.options.getAttachment("image");
-        if (image.contentType !== "image/png") return interaction.editReply({
+        if (image.contentType !== "image/png" || image.contentType !== "image/jpg") return interaction.editReply({
             embeds: [{
                 description: "Lütfen PNG formatında bir resim yükleyin!",
                 footer: {
