@@ -74,16 +74,16 @@ module.exports = {
                         color: 0xEB2F49
                     }]
                 });
-                // if (!text.toLowerCase().includes(userName.toLowerCase())) return interaction.editReply({
-                //     embeds: [{
-                //         description: "Kullanıcı adınız resimde yer almıyor!",
-                //         footer: {
-                //             text: "Sta Abone Rolü Kontrolcüsü",
-                //             iconURL: "https://i.imgur.com/rnceeW4.png"
-                //         },
-                //         color: 0xEB2F49
-                //     }]
-                // });
+                if (!text.toLowerCase().includes(userName.toLowerCase())) return interaction.editReply({
+                    embeds: [{
+                        description: "Kullanıcı adınız görselde yer almıyor!",
+                        footer: {
+                            text: "Sta Abone Rolü Kontrolcüsü",
+                            iconURL: "https://i.imgur.com/rnceeW4.png"
+                        },
+                        color: 0xEB2F49
+                    }]
+                });
                 if (
                     !text.toLowerCase().includes("abone olundu") && 
                     !text.toLowerCase().includes("Abone olundu") && 
@@ -97,7 +97,7 @@ module.exports = {
                 ) {
                     return interaction.editReply({
                         embeds: [{
-                            description: "Abone değilsin!\n-# Görüntü mobil uygulamaya ait ise henüz mobil görselleri doğrulayamıyoruz.\n-# Görüntüyü Türkçe ve masaüstü resmi olarak yüklemeyi deneyin.\n-# Yüklediğiniz görsel doğrulanmıyorsa lütfen bir yetkilinin aboneliğinizi doğrulamasını bekleyin.",
+                            description: "## **Abone değilsin!**\n-# Abone olundu yazısının net olarak göründüğünden emin olun.\n\n-# Yüklediğiniz görsel doğrulanmıyorsa lütfen görseli direkt olarak bu kanala yükleyerek bir yetkilinin aboneliğinizi doğrulamasını bekleyin.",
                             footer: {
                                 text: "Sta Abone Rolü Kontrolcüsü",
                                 iconURL: "https://i.imgur.com/rnceeW4.png"
